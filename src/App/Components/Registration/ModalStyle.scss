@@ -1,8 +1,8 @@
-.modal{
+.modal {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
     left: 0;
@@ -10,63 +10,70 @@
     bottom: 0;
     z-index: 100;
 }
-.modal__inner{
+.modal__inner {
     width: 25%;
     padding: 25px 0;
     background-color: #fff;
     border: 2px solid #666666;
     border-radius: 4px;
 }
-.modal__inner-top{
+
+.modal__inner-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
 
-    .modal__inner-close{
+    .modal__inner-close {
         color: #777777;
         background-color: transparent;
         font-size: 24px;
         cursor: pointer;
-        transition: .2s ease;
+        transition: 0.2s ease;
 
-        &:hover{
-            color: #5F5F5F;
+        &:hover {
+            color: #5f5f5f;
             transform: scale(1.2);
         }
     }
 }
 
-.modal__inner-main{
+.modal__inner-main {
     margin: 20px 0;
     padding: 20px 15px;
-    border-top: 2px solid #ECEEF1;
-    border-bottom: 2px solid #ECEEF1;
+    border-top: 2px solid #eceef1;
+    border-bottom: 2px solid #eceef1;
 }
 
-.modal__inner-bottom{
+.modal__inner-bottom {
     padding: 0 15px;
 
-    .primary-btn{
+    .primary-btn {
         margin-left: auto;
         padding: 10px 20px;
     }
 }
 
-@media( max-width: 990px ){
-    .modal__inner{
+// responsive
+
+@media (max-width: 990px) {
+    .modal__inner {
         width: 50%;
     }
 }
 
-@media( max-width: 768px ){
-    .modal__inner{
+// tablet
+
+@media (max-width: 768px) {
+    .modal__inner {
         width: 75%;
     }
 }
 
-@media( max-width: 545px ){
-    .modal__inner{
+// mobile
+
+@media (max-width: 545px) {
+    .modal__inner {
         width: 90%;
     }
 }

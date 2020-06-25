@@ -11,6 +11,8 @@
     flex-wrap: wrap;
     margin-top: 30px;
 }
+
+// user card stylization
 .user__card {
     width: 33.333%;
     padding: 50px 10px 0;
@@ -78,6 +80,8 @@
         display: block;
     }
 }
+
+// load more users btn
 .users__btn {
     margin: 40px auto 0;
 }
@@ -151,6 +155,8 @@
     }
 }
 
+// responsive
+
 @media (max-width: 990px) {
     .user__name {
         width: 100%;
@@ -158,6 +164,8 @@
         text-overflow: ellipsis;
     }
 }
+
+// tablet
 
 @media (max-width: 768px) {
     .users {
@@ -167,6 +175,9 @@
         font-size: 20px;
     }
 }
+
+
+// mobile
 
 @media (max-width: 545px) {
     .users {

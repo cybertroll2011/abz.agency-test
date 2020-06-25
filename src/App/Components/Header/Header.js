@@ -16,19 +16,6 @@ class Header extends React.Component {
         this.moveToTop = this.moveToTop.bind(this);
     }
 
-    componentDidMount() {
-        let links = Array.from(document.querySelectorAll(".nav__link"));
-        let sections = Array.from(document.querySelectorAll("section"));
-        links.map(el => {
-            let section = el.getAttribute("data-section");
-            if (section === null) {
-                // console.log(true);
-            } else {
-                // console.log(section);
-            }
-        })
-    }
-
     handleLinkClick(event) {
         event.preventDefault();
         let sections = Array.from(document.querySelectorAll("section"));
@@ -103,6 +90,7 @@ class Header extends React.Component {
                         </button>
                     </div>
                 </div>
+                {/* mobile menu (hidden by default) */}
                 <div className="mobile-menu">
                     <Swipeable onSwiped={this.handleMenuSwipe}>
                         <div className="mobile-menu-swipeable" onClick={this.closeMenu}>

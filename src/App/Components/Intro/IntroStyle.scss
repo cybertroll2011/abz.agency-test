@@ -23,6 +23,8 @@
     margin-top: 40px;
 }
 
+
+// tablet
 @media( max-width: 768px ){
     .intro{
         padding: 65px 0;
@@ -34,6 +36,9 @@
         width: 430px;
     }
 }
+
+// mobile
+
 @media( max-width: 545px ){
     .intro{
         margin-top: 40px;

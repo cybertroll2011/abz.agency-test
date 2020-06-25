@@ -16,7 +16,6 @@ class Users extends React.Component {
     }
 
     async componentDidMount() {
-        let mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
         let dataArr = {};
         await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6')
             .then(function (response) {

@@ -10,6 +10,7 @@
 .header-scroll{
     box-shadow: 0 -10px 10px #000;
 }
+
 .header__inner {
     display: flex;
     justify-content: space-between;
@@ -19,6 +20,9 @@
 .header__logo{
     cursor: pointer;
 }
+
+// nav stylization
+
 .nav__link {
     margin-right: 30px;
     color: #212529;

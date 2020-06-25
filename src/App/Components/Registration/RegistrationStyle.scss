@@ -13,6 +13,9 @@ form {
     text-align: left;
 }
 
+
+// input stylization
+
 .form__input-wrapper {
     margin-bottom: 25px;
 
@@ -118,6 +121,7 @@ form {
     }
 }
 
+// input[type="file"] stylization
 .form__upload-wrapper {
     display: flex;
     justify-content: space-between;
@@ -164,9 +168,12 @@ form {
     }
 }
 
+//submit button
 .form__submit {
     margin: 40px auto 0;
 }
+
+// responsive
 
 @media (max-width: 990px) {
     .registration-form__subtitle,
@@ -174,6 +181,8 @@ form {
         width: 60%;
     }
 }
+
+// tablet
 
 @media (max-width: 768px) {
     .registration-form__inner {
@@ -187,6 +196,8 @@ form {
         width: 80%;
     }
 }
+
+// mobile
 
 @media (max-width: 545px) {
     .registration-form__inner {

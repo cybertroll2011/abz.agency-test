@@ -33,15 +33,15 @@
   transition: 0.2s ease;
 }
 .modal__inner-top .modal__inner-close:hover {
-  color: #5F5F5F;
+  color: #5f5f5f;
   transform: scale(1.2);
 }
 
 .modal__inner-main {
   margin: 20px 0;
   padding: 20px 15px;
-  border-top: 2px solid #ECEEF1;
-  border-bottom: 2px solid #ECEEF1;
+  border-top: 2px solid #eceef1;
+  border-bottom: 2px solid #eceef1;
 }
 
 .modal__inner-bottom {
