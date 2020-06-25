@@ -20,7 +20,6 @@ class App extends React.Component {
 
   handleScroll() {
     let header = document.querySelector(".header");
-    let introHeight = document.querySelector(".intro").clientHeight;
     if (window.scrollY > 300) {
       header.classList = ["header header-scroll"];
     } else {

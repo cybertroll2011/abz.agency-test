@@ -86,7 +86,7 @@ class RegistrationForm extends React.Component {
         this.setState({
             number: value
         });
-        if (value.match(/^[\+]{0,1}380([0-9]{9})$/i)) {
+        if (value.match(/^[\+]{0,1}380([0-9]{9})$/)) {
             event.target.classList = ["form__input"];
         } else {
             event.target.classList = ["form__input form__input-error"];
@@ -99,7 +99,6 @@ class RegistrationForm extends React.Component {
             id: event.target.getAttribute("data-postid")
         }
         if (positionData.name !== "" && positionData.id !== "") {
-            console.log(positionData);
             this.setState({
                 position_id: positionData.id
             });
@@ -109,9 +108,22 @@ class RegistrationForm extends React.Component {
     handleInputFile(event) {
         let text = document.querySelector(".form__upload-photo input[type='text']");
         text.value = event.target.files[0].name;
-        console.log(event.target.files[0]);
+        let imgWidth = 0;
+        let imgHeight = 0;
 
-        if (event.target.files[0].size <= 5242880 && event.target.files[0].type === "image/jpeg" || event.target.files[0].type === "image/jpg") {
+        const reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = function (e) {
+            let image = new Image();
+            image.src = e.target.result;
+
+            image.onload = function () {
+                imgHeight = this.height;
+                imgWidth = this.width;
+            }
+        }
+
+        if (event.target.files[0].size <= 5242880 && event.target.files[0].type === "image/jpeg" || event.target.files[0].type === "image/jpg" && imgWidth >= 70 && imgHeight >= 70) {
             event.target.classList = ["form__input"];
             this.setState({
                 image: event.target.value
@@ -121,21 +133,21 @@ class RegistrationForm extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        let postId = this.state.position_id;
-        postId = parseInt(postId);
-        let formData = {
-            name: this.state.name,
-            email: this.state.email,
-            phone: this.state.number,
-            position_id: postId,
-            photo: this.state.image
-        }
         let token = this.state.token;
         let message = "";
         let isRegistrationSuccessfull = this.state.isRegistrationSuccessfull;
+        let fileField = document.querySelector('input[type="file"]');
+
+        let formData = new FormData();
+        formData.append("position_id", parseInt(this.state.position_id));
+        formData.append("name", this.state.name);
+        formData.append("email", this.state.email);
+        formData.append("phone", this.state.number);
+        formData.append("photo", fileField.files[0]);
+
         await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
             method: 'POST',
-            body: JSON.stringify(formData),
+            body: formData,
             headers: {
                 'Token': token, // get token with GET api/v1/token method
             },
